@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cz.marekjalovec.skipawsdk" version="0.0.1">
+    <name>SkipAWSDK</name>
+    <description>SkipAWSDK</description>
+    <license>MIT</license>
+    <keywords>skip,airwatch,sdk</keywords>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SkipAWSDK">
+                <param name="ios-package" value="SkipAWSDK"/>
+            </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>airwatch</string>
+                <string>AWSSOBroker2</string>
+            </array>
+        </config-file>
+
+        <header-file src="src/ios/AWSDKBridge+Sapho.h"/>
+        <source-file src="src/ios/AWSDKBridge+Sapho.m"/>
+    </platform>
+</plugin>
